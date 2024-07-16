@@ -1,4 +1,4 @@
-## kxtop - A kubectl top alternative with better features (WIP)
+## kxtop - A kubectl top alternative with better features (WIP) custom for AWS EKS
 ## Usage
 Please note that the `kxtop` program is currently under development and only two commands are available: `kxtop nodes` and `kxtop pods`. 
 
@@ -6,13 +6,19 @@ To use `kxtop nodes`, run the following command:
 ```
 kxtop nodes
 ```
+![kxtop nodes](images/kxtop_nodes.png)
+
 This command will display the resource usage of all nodes in your cluster.
 
 To use `kxtop pods`, run the following command:
 ```
 kxtop pods
+(or)
+kxtop pods -n <namespace>
 ```
-This command will display the resource usage of all pods in your cluster.
+![kxtop pods](images/kxtop_pods.png)
+
+This command will display the resource usage of respective pods in your cluster.
 
 Please stay tuned for updates as more features and commands will be added in future releases. like `kxtop pvc` (to get pvc usage), `kxtop analytics` (to get whole cluster overview at once).
 

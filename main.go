@@ -1,13 +1,13 @@
 /*
-Copyright © 2024 Adarsh adarshsaxena358@gmail.com
+Repo Maintainer:
+	Adarsh Saxena
+	adarshsaxena358@gmail.com
 */
 package main
 
 import (
-	"kxtop/app/cmd/analytics"
 	"kxtop/app/cmd/nodes"
 	"kxtop/app/cmd/pods"
-	"kxtop/app/cmd/pvc"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -35,7 +35,8 @@ It also provides the analytics of the resource usage in the cluster.`,
 func init() {
 	rootCmd.AddCommand(pods.PodsCmd)
 	rootCmd.AddCommand(nodes.NodesCmd)
-	rootCmd.AddCommand(pvc.PvcCmd)
-	rootCmd.AddCommand(analytics.AnalyticsCmd)
+	// WIP for PVC & Analytics command
+	// rootCmd.AddCommand(pvc.PvcCmd)
+	// rootCmd.AddCommand(analytics.AnalyticsCmd)
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }

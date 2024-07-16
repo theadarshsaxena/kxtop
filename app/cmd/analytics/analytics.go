@@ -1,11 +1,7 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package analytics
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
