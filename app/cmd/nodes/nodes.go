@@ -50,13 +50,14 @@ func init() {
 }
 
 func fetchNodes(cmd *cobra.Command, args []string) {
-	// Create a Kubernetes clientset
-	kubeconfig := filepath.Join(homedir.HomeDir(), ".kube", "config")
-
-	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	apiConfig, err := clientcmd.NewDefaultClientConfigLoadingRules().Load()
 	if err != nil {
-		fmt.Printf("Failed to create config: %v\n", err)
-		return
+		return err
+	}
+
+	restConfig, err := clientcmd.NewDefaultClientConfig(*apiConfig, &clientcmd.ConfigOverrides{}).ClientConfig()
+	if err != nil {
+		return err
 	}
 
 	clientset, err := kubernetes.NewForConfig(config)
